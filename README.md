@@ -144,16 +144,19 @@ Available at `http://localhost:5173`
 
 <img width="920" height="802" alt="resumeAnalysis" src="https://github.com/user-attachments/assets/a0497ba2-3b27-4ee6-bc80-fb9064cc98fb" />
 
+Resume Analysis
 
 <img width="1173" height="613" alt="historyViewer" src="https://github.com/user-attachments/assets/4171e9b8-083b-40c9-bfc1-16a91e47d70a" />
 
+History Viewer
 
 <img width="998" height="412" alt="AIFeedback1" src="https://github.com/user-attachments/assets/46f6807e-46d4-4f3f-b8aa-beb7a1fcf66b" />
 
+AI Feedback - 1
 
 <img width="861" height="568" alt="AIFeedback2" src="https://github.com/user-attachments/assets/de2bc7a8-f905-45d4-a042-0e882eeaad2c" />
 
-
+AI Feedback - 2
 
 ---
 
