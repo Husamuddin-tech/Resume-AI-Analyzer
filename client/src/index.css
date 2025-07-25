@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --background: linear-gradient(135deg, #f9fafe, #ffffff);
+  --text: #0a0a0a;
+  --accent: #6a11cb;
+  --accent-light: #2575fc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --muted: #6b7280;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 🔵 Background blob effect (mouse-reactive) */
+body::before {
+  content: '';
+  position: fixed;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(106,17,203,0.1), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: top 0.2s ease, left 0.2s ease;
+  z-index: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 1280px;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Reusable button */
+button {
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 24px;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  margin-top: 1rem;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(106, 17, 203, 0.2);
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* AI Feedback card */
+.card.full-width.ai-feedback {
+  background-color: var(--card-background, #fff);
+  border-radius: var(--border-radius, 8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 2.5rem;
+  margin-top: 2rem;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feedback-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--primary-color, #6a0dad);
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--primary-color, #6a0dad);
+  padding-bottom: 0.5rem;
+}
+
+.feedback-rating {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.feedback-section {
+  margin-top: 1.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #444;
+}
+
+.feedback-section strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--primary-color, #6a0dad);
+}
+
+.feedback-section ul {
+  padding-left: 1.8rem;
+  list-style-type: disc;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.feedback-section ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .card.full-width.ai-feedback {
+    padding: 1.5rem;
+  }
+
+  .feedback-title {
+    font-size: 1.3rem;
+  }
+
+  .feedback-section {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card.full-width.ai-feedback {
+    padding: 1rem;
+  }
+
+  .feedback-title {
+    font-size: 1.1rem;
+  }
+
+  .feedback-section {
+    font-size: 0.9rem;
+  }
+}

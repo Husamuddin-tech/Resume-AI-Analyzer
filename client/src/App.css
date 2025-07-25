@@ -1,0 +1,144 @@
+/* App.css */
+
+/* Root styling */
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #fdfdfd;
+  color: #1e1e1e;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Tabs (navigation) */
+.tabs {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #e4e4e7;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #6b7280;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+}
+
+.tabs button:hover {
+  color: #111827;
+}
+
+.tabs button.active {
+  color: #111827;
+  border-bottom: 3px solid #6366f1;
+  font-weight: 600;
+}
+
+/* Card UI */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #6366f1;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.3rem;
+  font-size: 1.25rem;
+}
+
+/* Grid layout for results */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Dropzone (file upload box) */
+.dropzone {
+  border: 2px dashed #d1d5db;
+  background: #fafafa;
+  color: #6b7280;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.dropzone:hover {
+  border-color: #6366f1;
+  background: #f3f4f6;
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .tabs {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tabs button {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .dropzone {
+    padding: 2rem 1.5rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs {
+    gap: 0.75rem;
+  }
+
+  .tabs button {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+}
