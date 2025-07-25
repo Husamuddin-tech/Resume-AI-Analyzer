@@ -165,17 +165,7 @@ AI Feedback - 2
 - Harnesses Google Gemini for deep, nuanced resume evaluation  
 - Non-technical users get actionable feedback instantly  
 - Clean, intuitive interface on both mobile and desktop  
-- Built to scale and evolve with future expansion
-
----
-
-## 📈 Future Roadmap
-
-- **Tailored feedback**: Upload job descriptions for targeted match scoring  
-- **PDF export**: Download complete analysis reports  
-- **Multi‑model AI**: Integrate with Claude, LLaMA, open‑source LLMs  
-- **Browser extension**: Instant resume scanning on any page  
-- **Bias & fairness module**: Benchmarking via FAIRE frameworks and metrics  
+- Built to scale and evolve with future expansion 
 
 ---
 
