@@ -10,7 +10,7 @@
 
 ---
 
-### 🚀 Checkout the Live Demo 👉🏻 [Click here!](https://resume-analyzer-fawn-gamma.vercel.app/)
+### 🚀 Checkout the Live Demo 👉🏻 [Click here!](https://resume-ai-analyzer-peach.vercel.app/)
 
 ## ✨ Features
 
