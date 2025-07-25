@@ -1,6 +1,7 @@
+
 # 📄 AI Resume Analyzer
 
-**A full-stack web application that leverages the Google Gemini API to provide intelligent analysis and feedback on resumes. This tool is designed to help users optimize their resumes by identifying strengths, weaknesses, and areas for improvement.**
+**A full‑stack web application powered by Google Gemini, designed to analyze your resume with intelligence and empathy—highlighting strengths, weaknesses, and tailored improvement suggestions.**
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -10,50 +11,46 @@
 
 ---
 
-### 🚀 Checkout the Live Demo 👉🏻 [Click here!](https://resume-ai-analyzer-peach.vercel.app/)
+## 🚀 Live Demo
 
-## ✨ Features
-
-- **🤖 AI-Powered Analysis**: Upload a PDF resume and get instant, structured feedback from Google's Gemini LLM.
-- **📊 Structured Data Extraction**: Automatically parses and categorizes personal details, work experience, education, skills, and more.
-- **⭐ Resume Scoring & Feedback**: Provides an objective score, detailed improvement areas, and relevant upskilling suggestions.
-- **🗂️ Historical Viewer**: Browse all previously analyzed resumes in a clean, sortable table with a detailed modal view.
-- **💅 Modern UI/UX**: A responsive and intuitive interface featuring a drag-and-drop uploader and toast notifications for a smooth user experience.
+[Try it out now](https://resume‑ai‑analyzer‑peach.vercel.app/) — upload a PDF, get instant Gemini-powered feedback.
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Key Features
 
-| Category      | Technology                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Frontend**  | React.js (Vite), Axios, CSS, `react-hot-toast`, `react-dropzone`                                              |
-| **Backend**   | Node.js, Express.js                                                                                          |
-| **Database**  | PostgreSQL                                                                                                   |
-| **AI**        | Google Gemini API (`@google/generative-ai`)                                                                  |
-| **File API**  | Multer (for file uploads), PDF-Parse (for text extraction)                                                   |
-| **Deployment**| **Frontend**: Vercel , **Backend & Database**: Render                                                   |
+- **AI-Driven Resume Insights**: Upload a resume PDF and receive structured, context‑aware feedback from Google Gemini.
+- **Automated Parsing**: Extracts contact info, work history, education, skills, projects and more.
+- **Smart Scoring**: Gives a quantitative score with identified improvement zones and upskilling suggestions.
+- **Upload History**: View all past resume analyses in a sortable table with detailed modal view.
+- **Modern UI/UX**: Drag‑and‑drop upload, toast notifications, mobile responsiveness for smooth user experience.
 
 ---
 
-## 📂 Project Structure
+## 🧱 Tech Stack
+
+| Layer         | Technologies                                                                 |
+|---------------|------------------------------------------------------------------------------|
+| Frontend      | React.js (Vite), Axios, react-hot-toast, react-dropzone                      |
+| Backend       | Node.js, Express, Multer, PDF‑Parse                                           |
+| Database      | PostgreSQL                                                                    |
+| AI Engine     | Google Gemini API via `@google/generative-ai`                                |
+| Deployment    | Vercel (frontend), Render (backend + database)                                |
+
+---
+
+## 🗂️ Project Structure
 
 ```
 resume-analyzer/
-│
 ├── client/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── App.js
-│   │   ├── index.css
-│   │   └── theme.js
 │   ├── .env.local
 │   └── package.json
-│
 └── server/
-    ├── routes/
-    │   └── resumeRoutes.js
     ├── controllers/
+    ├── routes/
     ├── middleware/
     ├── utils/
     ├── database.sql
@@ -64,22 +61,20 @@ resume-analyzer/
 
 ---
 
-## ⚙️ Local Development Setup
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing.
+## ⚙️ Local Setup Guide
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/) (v18 or later)
-- [PostgreSQL](https://www.postgresql.org/download/)
+- Node.js v18+  
+- PostgreSQL installed and running
 
-### 🔧 Installation Guide
+### Installation
 
-#### 1. Clone the Repository
+#### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/resume-analyzer.git
-cd resume-analyzer
+git clone https://github.com/Husamuddin-tech/Resume-AI-Analyzer.git
+cd Resume-AI‑Analyzer
 ```
 
 #### 2. Backend Setup
@@ -89,32 +84,27 @@ cd server
 npm install
 ```
 
-- Create a `.env` file in the `/server` directory:
+**Create `.env`**:
 
 ```env
-DATABASE_URL="postgresql://YOUR_USERNAME:YOUR_PASSWORD@localhost:5432/resume_db"
-GEMINI_API_KEY="your_google_ai_api_key"
+DATABASE_URL="postgresql://USERNAME:PASSWORD@localhost:5432/resume_db"
+GEMINI_API_KEY="your_google_gemini_api_key"
 ```
 
-- Create the PostgreSQL database:
+**Database setup**:
 
 ```bash
-psql -U YOUR_USERNAME -c "CREATE DATABASE resume_db;"
+psql -U USERNAME -c "CREATE DATABASE resume_db;"
+psql -U USERNAME -d resume_db -f database.sql
 ```
 
-- Run schema:
-
-```bash
-psql -U YOUR_USERNAME -d resume_db -f database.sql
-```
-
-- Start the backend server:
+**Run server**:
 
 ```bash
 npm start
 ```
 
-Server runs at `http://localhost:4000`
+Backend runs at `http://localhost:4000`
 
 #### 3. Frontend Setup
 
@@ -123,35 +113,66 @@ cd ../client
 npm install
 ```
 
-- Create `.env.local`:
+**Create `.env.local`**:
 
 ```env
 VITE_API_BASE_URL="http://localhost:4000"
 ```
 
-- Start the frontend server:
+**Run frontend**:
 
 ```bash
 npm run dev
 ```
 
-Frontend runs at `http://localhost:5173`
+Available at `http://localhost:5173`
 
 ---
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint             | Description                                              |
-|--------|----------------------|----------------------------------------------------------|
-| `POST` | `/api/resumes/upload`| Uploads a resume PDF for analysis and saves the result. |
-| `GET`  | `/api/resumes`       | Fetches all parsed resume data.                         |
-| `GET`  | `/api/resumes/:id`   | Fetches details for a specific resume by ID.            |
+| Method | Endpoint                  | Description                                         |
+|--------|---------------------------|-----------------------------------------------------|
+| POST   | `/api/resumes/upload`     | Upload a resume PDF and receive parsed feedback     |
+| GET    | `/api/resumes`            | Retrieve all previously analyzed resumes            |
+| GET    | `/api/resumes/:id`        | Get full analysis for a specific resume             |
 
 ---
 
-## 👤 Author
+## 🖼️ Screenshot Placeholders
 
-**Syed Husamuddin**
+*Insert UI visuals here (e.g. drag‑and‑drop upload, analysis results, history view)*
 
-- 🔗 [GitHub](https://github.com/SyedHusamuddin)
-- 💼 [LinkedIn](https://www.linkedin.com/in/syedhusamuddin)
+- **Screenshot 1**: Upload interface  
+- **Screenshot 2**: Analysis report  
+- **Screenshot 3**: History dashboard and modal  
+
+---
+
+## ✅ Why This Tool Stands Out
+
+- Harnesses Google Gemini for deep, nuanced resume evaluation  
+- Non-technical users get actionable feedback instantly  
+- Clean, intuitive interface on both mobile and desktop  
+- Built to scale and evolve with future expansion
+
+---
+
+## 📈 Future Roadmap
+
+- **Tailored feedback**: Upload job descriptions for targeted match scoring  
+- **PDF export**: Download complete analysis reports  
+- **Multi‑model AI**: Integrate with Claude, LLaMA, open‑source LLMs  
+- **Browser extension**: Instant resume scanning on any page  
+- **Bias & fairness module**: Benchmarking via FAIRE frameworks and metrics  
+
+---
+
+## 🙋 Author
+
+**Syed Husamuddin**  
+- [GitHub](https://github.com/Husamuddin-tech)  
+- [LinkedIn](https://www.linkedin.com/in/syed-husamuddin)
+
+---
+
