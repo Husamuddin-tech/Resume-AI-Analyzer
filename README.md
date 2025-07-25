@@ -13,7 +13,7 @@
 
 ## 🚀 Live Demo
 
-[Try it out now](https://resume‑ai‑analyzer‑peach.vercel.app/) — upload a PDF, get instant Gemini-powered feedback.
+[Try it out now](https://resume-ai-analyzer-peach.vercel.app/) — upload a PDF, get instant Gemini-powered feedback.
 
 ---
 
